@@ -65,7 +65,7 @@ const Home = () => {
   const bombFinance = useBombFinance();
   // const bombmaxi = useBombMaxiStats('0xd6f52e8ab206e59a1e13b3d6c5b7f31e90ef46ef000200000000000000000028');
 
-  // console.log(bombmaxi);
+   console.log(TVL);
   // let bomb;
   // if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
   //   bomb = bombTesting;
