@@ -40,6 +40,7 @@ import useHarvestFromBoardroom from '../../hooks/useHarvestFromBoardroom';
 import useClaimRewardCheck from '../../hooks/boardroom/useClaimRewardCheck';
 import Farmcontainer from './FarmContainer/Farmcontainer';
 import BombContainer from './BombContainer/BombContainer';
+import BondsContainer from './BondsContainer';
 
 
 
@@ -163,6 +164,10 @@ const Dashboard = () => {
 
             {/** Third Container */}
             <Farmcontainer />
+
+            {/** Fourth Container */}
+            <BondsContainer />
+
             
         </div>
     )

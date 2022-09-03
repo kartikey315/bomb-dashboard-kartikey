@@ -10,6 +10,7 @@ import useBombStats from '../../../hooks/useBombStats';
 import useShareStats from '../../../hooks/usebShareStats';
 import useStakedBalance from '../../../hooks/useStakedBalance';
 import useBank from '../../../hooks/useBank';
+import useStatsForPool from '../../../hooks/useStatsForPool';
 
 const Farmcontainer = () => {
     
@@ -28,6 +29,7 @@ const Farmcontainer = () => {
     const earnedInDollars = (Number(tokenPriceInDollars) * Number(getDisplayBalance(earnings))).toFixed(2);
 
     const stakedBalance = useStakedBalance(bank.contract, bank.poolId);
+    let statsOnPool = useStatsForPool(bank);
 
   return (
     <div><div class="container">
@@ -80,21 +82,21 @@ const Farmcontainer = () => {
 
             </div>
             <div class="row">
-                <div class="d-flex justify-content-end border border-white">TVL:231121</div>
+                <div class="d-flex justify-content-end border border-white">${statsOnPool?.TVL}</div>
             </div>
             <div class="row mt-5 border border-white">
                 <div class="col d-flex justify-content-center border border-white">
-                    <Button>Deposit</Button>
+                    <Button >Deposit</Button>
                 </div>
                 <div class="col d-flex justify-content-center border border-white">
                     <Button>Withdraw</Button>
                 </div>
                 <div class="col d-flex justify-content-center border border-white">
-                    <Button>Claim and Withdraw</Button>
+                    <Button onClick={onReward}>Claim and Withdraw</Button>
                 </div>
             </div>
             <div class="row">
-                <div class="d-flex justify-content-end border border-white mt-3">TVL:231121</div>
+                <div class="d-flex justify-content-end border border-white mt-3">${statsOnPool?.TVL}</div>
             </div>
             <div class="row mt-5 mb-2 border border-white">
                 <div class="col d-flex justify-content-center border border-white">
